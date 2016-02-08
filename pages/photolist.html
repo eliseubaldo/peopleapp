@@ -15,7 +15,7 @@
 	</thead>
 	<tbody>
 		<tr ng-repeat="photo in photoList | filter:searchquery">
-			<td>{{album.owner}}</td>
+			<td>{{peopleList[usAl[0].userId-1].name}}</td>
 			<td>{{photo.id}}</td>
 			<td>{{photo.title}}</td>
 			<td><img ng-src="{{photo.thumbnailUrl}}" alt=""></td>
