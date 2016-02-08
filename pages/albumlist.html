@@ -15,7 +15,7 @@
 		<tr ng-repeat="album in albumList | filter:searchquery">
 			<td>{{peopleList[album.userId].name}}</td>
 			<td>{{album.id}}</td>
-			<td>{{album.title}}</td>			
+			<td><a href="#photo/{{album.id}}" title="">{{album.title}}</a></td>			
 		</tr>
 	</tbody>
 </table>

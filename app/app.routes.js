@@ -13,6 +13,11 @@ peopleApp.config(function($routeProvider){
 		templateUrl:'pages/albumlist.html',
 		controller:'albumController'
 	})
+	.when('/photo/:albumID', {
+		templateUrl:'pages/photolist.html',
+		controller:'photoController'
+	})
+	.otherwise({redirectTo:'/'})
 
 
 
