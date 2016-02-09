@@ -1,4 +1,4 @@
-peopleApp.controller('photoController', function($scope, $routeParams, getPhotoList, getPeopleList, getAlbumList){
+peopleApp.controller('photoController', ['$scope', '$routeParams', 'getPhotoList', 'getPeopleList', 'getAlbumList', function($scope, $routeParams, getPhotoList, getPeopleList, getAlbumList){
 
 	getPhotoList.getList($routeParams.albumID).success(function(data){
 			$scope.photoList = data;
@@ -13,4 +13,4 @@ peopleApp.controller('photoController', function($scope, $routeParams, getPhotoL
 			//usAl.userId;
 	});
 
-});
+}]);

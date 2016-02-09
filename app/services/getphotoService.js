@@ -1,4 +1,4 @@
-peopleApp.factory('getPhotoList', function($http){
+peopleApp.factory('getPhotoList', ['$http', function($http){
 
 	var factory = {};
 
@@ -9,4 +9,4 @@ peopleApp.factory('getPhotoList', function($http){
 	return factory;
 
 
-});
+}]);

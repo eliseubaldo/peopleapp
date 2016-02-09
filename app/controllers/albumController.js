@@ -1,4 +1,4 @@
-peopleApp.controller('albumController', function($scope, getAlbumList, getPeopleList){
+peopleApp.controller('albumController',['$scope', 'getAlbumList', 'getPeopleList', function($scope, getAlbumList, getPeopleList){
 
 	getAlbumList.getList().success(function(data){
 			$scope.albumList = data;
@@ -8,4 +8,4 @@ peopleApp.controller('albumController', function($scope, getAlbumList, getPeople
 			$scope.peopleList = data;
 		});
 
-});
+}]);
