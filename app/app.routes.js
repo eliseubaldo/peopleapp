@@ -17,8 +17,10 @@ peopleApp.config(function($routeProvider){
 		templateUrl:'pages/photolist.html',
 		controller:'photoController'
 	})
+	.when('/todo', {
+		templateUrl:'pages/todolist.html',
+		controller:'todoController'
+	})
 	.otherwise({redirectTo:'/'})
-
-
 
 });
