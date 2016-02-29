@@ -26,6 +26,7 @@
       <script src="app/controllers/todoController.js"></script>
 
 
+      <script src="app/services/loader.js"></script>
       <script src="app/services/getpeopleService.js"></script>
       <script src="app/services/getalbumService.js"></script>
       <script src="app/services/getphotoService.js"></script>
@@ -38,11 +39,39 @@
       .navbar-header{
       	margin-right:40px;
       }
+
+      .loading{
+            position:absolute;
+            width:100%;
+            height:100%;
+            background:rgba(00,00,00,0.7);
+            color:red;                      
+            z-index:2000;
+
+      }
+      .loading .loadContent{
+            width:100px;
+            height:100px;
+            position:absolute;
+            top:50%;
+            margin-top:-50px;
+            left:50%;
+            margin-left:-50px;
+      }
       	
       </style>
 
 </head>
 <body>
+<!-- Loader -->      
+<div data-ng-if="loading" class="loading">
+      <div class="loadContent">
+            <img src="assets/images/ajax-loader.gif" alt="">
+      </div>
+</div>
+<!-- / loader-->
+
+
 <div class="container">
 	<nav class="navbar navbar-default">
 		<div class="navbar-header">

@@ -1,4 +1,4 @@
-peopleApp.config(function($routeProvider){
+peopleApp.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider){
 
 	$routeProvider
 	.when('/', {
@@ -21,6 +21,9 @@ peopleApp.config(function($routeProvider){
 		templateUrl:'pages/todolist.html',
 		controller:'todoController'
 	})
-	.otherwise({redirectTo:'/'})
+	.otherwise({redirectTo:'/'});
 
-});
+	$httpProvider.interceptors.push('LoadingInterceptor');
+
+}]);
+
