@@ -1,0 +1,36 @@
+
+<div class="row">
+	<div class="col-md-12"><h3 class="text-center">To Do List</h3></div>	
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+
+		<div class="panel panel-default">
+			<div class="panel-heading form-inline">
+
+			  	<div class="form-group">
+			  			<input type="text" ng-model="newTodoItem" class="form-control" placeholder="Enter todo item">
+			  	</div>
+			  	<div class="form-group">			  		
+			  		<a href="" class="btn btn-primary" ng-click="saveItem(newTodoItem)"><span class="glyphicon-class glyphicon glyphicon-ok"></span></a>
+			  	</div>
+			</div>
+
+			  <div class="panel-body">		  	
+				<ul class="list-group" style="margin-top:20px;">
+					<li class="list-group-item" ng-repeat="item in todoList">{{item.value}} <a href="" ng-click="deleteItem($index)" class="btn btn-danger">Delete</a></li>
+				</ul>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+	
+
+
+
+

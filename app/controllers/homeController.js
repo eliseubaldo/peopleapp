@@ -1,0 +1,5 @@
+peopleApp.controller('homeController', function(){
+
+
+
+});

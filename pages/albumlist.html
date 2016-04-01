@@ -1,0 +1,21 @@
+
+<div class="pull-left"><h3>Album list</h3></div>
+<div class="pull-right">Search: <input type="text" ng-model="searchquery" class="form-control"></div>
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Owner</th>
+			<th>Album ID</th>
+			<th>Album Title</th>			
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="album in albumList | filter:searchquery">
+			<td>{{peopleList[album.userId-1].name}}</td>
+			<td>{{album.id}}</td>
+			<td><a href="#photo/{{album.id}}" title="">{{album.title}}</a></td>			
+		</tr>
+	</tbody>
+</table>

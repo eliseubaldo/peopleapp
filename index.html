@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html ng-app="peopleApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>People</title>
+	<!-- SCROLLS -->
+      <!-- load bootstrap and fontawesome via CDN -->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+      <!-- SPELLS -->
+      <!-- load angular and angular route via CDN -->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+
+      <script src="app/app.module.js" type="text/javascript"></script>
+      <script src="app/app.routes.js" type="text/javascript"></script>
+
+      <script src="app/controllers/homeController.js"></script>
+      <script src="app/controllers/peopleController.js"></script>
+      <script src="app/controllers/albumController.js"></script>
+      <script src="app/controllers/photoController.js"></script>
+      <script src="app/controllers/todoController.js"></script>
+
+
+      <script src="app/services/loader.js"></script>
+      <script src="app/services/getpeopleService.js"></script>
+      <script src="app/services/getalbumService.js"></script>
+      <script src="app/services/getphotoService.js"></script>
+
+      <style type="text/css" media="screen">
+      .navbar-brand{
+      	color:#ff2849 !important;
+      	font-size:1.5em !important;
+      }
+      .navbar-header{
+      	margin-right:40px;
+      }
+
+      .loading{
+            position:absolute;
+            width:100%;
+            height:100%;
+            background:rgba(00,00,00,0.7);
+            color:red;                      
+            z-index:2000;
+
+      }
+      .loading .loadContent{
+            width:100px;
+            height:100px;
+            position:absolute;
+            top:50%;
+            margin-top:-50px;
+            left:50%;
+            margin-left:-50px;
+      }
+      	
+      </style>
+
+</head>
+<body>
+<!-- Loader -->      
+<div data-ng-if="loading" class="loading">
+      <div class="loadContent">
+            <img src="assets/images/ajax-loader.gif" alt="">
+      </div>
+</div>
+<!-- / loader-->
+
+
+<div class="container">
+	<nav class="navbar navbar-default">
+		<div class="navbar-header">
+            <a class="navbar-brand" href="#"><i class="fa fa-users"></i> The People's App
+</a>
+	    </div>
+	<div class="navbar-collapse">
+		<ul class="nav nav-pills">
+        	<li><a href="#people" class="navbar-btn btn-primary">People</a></li>
+        	<li><a href="#album" class="navbar-btn btn-primary">Albums</a></li>        	
+            <li><a href="#todo" class="navbar-btn btn-primary">To Do List</a></li>
+    	</ul>
+
+	</div>
+	</nav>
+</div>
+
+<div class="container">
+	
+	
+	<div ng-view></div>	
+</div>
+	
+	 
+</body>
+</html>

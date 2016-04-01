@@ -1,0 +1,27 @@
+
+<div class="pull-left"><h3>People list</h3></div>
+<div class="pull-right">Search: <input type="text" ng-model="searchquery" class="form-control"></div>
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>User Name</th>
+			<th>Email</th>
+			<th>Address</th>
+			<th>Phone</th>			
+			<th>Nº of Albums owned</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="pp in peopleList | filter:searchquery">
+			<td>{{pp.name}}</td>
+			<td>{{pp.username}}</td>
+			<td>{{pp.email}}</td>
+			<td>{{pp.address.street}}, {{pp.address.suite}}, {{pp.address.city}}</td>
+			<td>{{pp.phone}}</td>
+			<td>{{albums}}</td>
+		</tr>
+	</tbody>
+</table>

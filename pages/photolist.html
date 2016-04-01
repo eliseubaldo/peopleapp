@@ -1,0 +1,24 @@
+
+<div class="pull-left"><h3>Photo list</h3></div>
+<div class="pull-right">Search: <input type="text" ng-model="searchquery" class="form-control"></div>
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Album Owner</th>
+			<th>Photo N#</th>
+			<th>Photo Title</th>
+			<th>Thumbnail</th>
+
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="photo in photoList | filter:searchquery">
+			<td>{{peopleList[usAl[0].userId-1].name}}</td>
+			<td>{{photo.id}}</td>
+			<td>{{photo.title}}</td>
+			<td><img ng-src="{{photo.thumbnailUrl}}" alt=""></td>
+		</tr>
+	</tbody>
+</table>
